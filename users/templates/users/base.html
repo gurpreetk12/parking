@@ -1,0 +1,296 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Parking Website </title>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>      
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="#">WELCOME!!!!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
+          <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+          {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+            <a class="nav-item nav-link" href="{% url 'index' %}">Browse</a>
+			<a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+          {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!--- Image Slider -->
+<div id="slides" class="carousel slide" data-ride="carousel" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1"></li>
+		<li data-target="#slides" data-slide-to="2"></li>
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img class="image" src="https://github.com/arvind37/Basic-Website-using-HTML-CSS/blob/master/background.png?raw=true" >
+			<div class="carousel-caption">
+				<h1 class="display-2">SIXTH SICK</h1>
+				<h3>Parking System</h3>
+			<!--	<button type="button" class="btn btn-outline-light btn-lg">VIEW
+				DEMO</button>
+				<button type="button" class="btn btn-primary btn-lg">Get Started</button>  -->
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQAxpC6qySIK4DOZWZ_ggrK4h00RPM5RT8THcilsXltJawrNS-eaMUTQkEDKcEtwfWkfEQ-YA5LY&usqp=CAU&ec=48600113" height="615" width="1400">
+		</div>
+		<div class="carousel-item">
+			<img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyBaF0Mq8816VIUNUYwy-6AwZfp-3PKShmZBXFU0RlgA&usqp=CAU&ec=48600113" height="615" width="1400 >
+		</div>
+	</div>
+</div>
+
+<!--- Jumbotron -->
+<div class="container-fluid" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row jumbotron">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+			<p class="lead">My Parking System allows users to book the available parking slots efficiently and instantly.</p>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+			<a href="#"><button type="button" class="btn btn-outline-secondary
+			btn-lg">BOOK NOW</button></a>
+		</div>
+	</div>
+</div>
+
+<!--- Welcome Section -->
+<div class="container-fluid padding"data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class="display-4" ><b> Parking Solutions are here</b></h1>
+		</div>
+		<hr>
+		<div class="col-12">
+			<p class="lead">Welcome to My Parking Booking System
+				It is a one step solution to all your parking problems.</p>
+		</div>
+	</div>
+</div>
+
+<!--- Three Column Section -->
+<div class="container-fluid padding"data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row text-center padding">
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<i class="fas fa-code"></i>
+			<h3>Traffic solution</h3>
+			<p>Efficient parking will deconges the traffic</p>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<i class="fas fa-bold"></i>
+			<h3>Easy </h3>
+			<p>It's super easy to book parking here</p>
+		</div>
+		<div class="col-xs-12 col-md-4">
+			<i class="fab fa-css3"></i>
+			<h3>Fast</h3>
+			<p>Book instantly and park</p>
+		</div>
+	</div>
+	<hr class="my-4">
+</div>
+
+<!--- Two Column Section -->
+<div class="container-fluid padding"data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row padding">
+		<div class="col-md-12 col-lg-6">
+			<h2>Our Parking booking system...</h2>
+			<p>1. Firstly get yourself registered on our portal if our you are a new user.</p>
+			<p>2. Then enter your basic details like your name,phone no.,location,etc..</p>
+			<p>3. Select your current location and destination location for parking.</p>
+            <p>4. Book your preferred parking slot.</p>
+            <p>5. And here you are up with your parking.</p>
+				<br>
+				<a href="#" class="btn btn-primary">Learn More</a>
+		</div>
+		<div class="col-lg-6">
+			<img src="https://chintglobal.com/blog/wp-content/uploads/different-types-of-parking-system.jpg">
+		</div>
+	</div>
+</div>
+
+<hr class="my-4">
+
+
+<!--- Meet the team -->
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class="display-4">Meet the Team </h1>
+		</div>
+	</div>
+</div>
+
+<!--- Cards -->
+<div class="container-fluid padding" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row padding">
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="https://github.com/arvind37/Basic-Website-using-HTML-CSS/blob/master/team2.png?raw=true">
+				<div class="card-body">
+					<h4 class="card-title">Gurpreet Kaur</h4>
+					<p class="card-text">Gurpreet is a known an expert of the traffic management system.
+					</p>
+					<a href="https://www.linkedin.com/in/gurpreet-kaur-13179123a" class="btn btn-outline-secondary">See Profile</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="https://github.com/arvind37/Basic-Website-using-HTML-CSS/blob/master/team3.png?raw=true">
+				<div class="card-body">
+					<h4 class="card-title">Anuj Gupta</h4>
+					<p class="card-text">Anuj has expertise in the IOT. He smartly implements IOT to solve real world problems.</p>
+					<a href="https://www.linkedin.com/in/anuj-gupta-666043220" class="btn btn-outline-secondary">See Profile</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="https://github.com/arvind37/Basic-Website-using-HTML-CSS/blob/master/team1.png?raw=true">
+				<div class="card-body">
+					<h4 class="card-title">Manisha Maurya</h4>
+					<p class="card-text">Manisha is a marketing finance analyst who handles the parking system.</p>
+					<a href="https://www.linkedin.com/in/manisha-maurya-89bb91225" class="btn btn-outline-secondary">See Profile</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--- Two Column Section -->
+<div class="container-fluid padding" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row padding">
+		<div class="col-md-12 col-lg-6">
+			<h2>Our Philosophy</h2>
+			<p>We know that greatness in a disruptive era requires bold
+				ambition, curious talent and a culture that believes we're
+			    smarter together.</p>
+			<p>We approach every challenge hostically, with best-in-class
+				expertise in data, creativity, media, technology, search, social and
+				more. We call this Alchemy. It has the power to build our clients'
+				brands and transform their business. And white it may seem like
+				magic, we've got it down to a science.
+			</p>
+
+		</div>
+		
+	</div>
+	<hr class="my-4">
+</div>
+
+<!--- Connect -->
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<h2>Connect</h2>
+		</div>
+		<div class="col-12 social padding">
+			<a href="https://www.facebook.com/profile.php?id=100088871385610"><i class="fab fa-facebook"></i></a>
+			<a href="https://twitter.com/Viwakeup16?t=2iGfvWEsimGjt32TqOXCyg&s=08"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-google-plus-g"></i></a>
+			<a href="https://instagram.com/kerbletparking?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a>
+			<a href="#"><i class="fab fa-youtube"></i></a>
+		</div>
+	</div>
+</div>
+
+<!--- Footer -->
+<footer>
+	<div class="container-fluid padding" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+		<div class="row text-center">
+			<div class="col-md-4 pt-0">
+				<div class="footer-image">
+				<img src="data:image/jpeg;base64,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" height="50" width="30"></div>
+				<hr class="light">
+				<p>913-652-5574</p>
+				<p>Myparking@hhemail.com</p>
+				<p>KIET GROUP OF INSTITUIONS</p>
+				<p>Ghaziabad, UP, 144</p>
+			</div>
+			<div class="col-md-4">
+				<hr class="light">
+				<h5>Our hours</h5>
+				<hr class="light">
+				<p>Available 24x7</p>
+			</div>
+			<div class="col-md-4">
+				<hr class="light">
+				<h5>Service Area</h5>
+				<hr class="light">
+				<p>City, State, 900</p>
+				<p>City, State, 800</p>
+				<p>City, State, 700</p>
+				<p>City, State, 600</p>
+			</div>
+			<div class="col-12">
+				<hr class="light-100">
+				<h5>&copy; Parking System </h5>
+                <p>@Copyrights 100-091 All rights are reserved</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+</body>
+</html>
